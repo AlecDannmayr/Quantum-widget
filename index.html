@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+  <script src="https://kit.fontawesome.com/aaf344b867.js" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+  <title>QCR Widget Tester</title>
+</head>
+
+<body>
+  <div class=" container-fluid body-wrapper"
+    style="background-color:#2188CD50; width: 525px; height: 536px; margin-left: -15px;">
+    <div class="content-wrapper">
+      <label for="basic-url"
+        style="background-color: #221F1F; color: #fff; width: 510px; text-align: center; padding: 20px; margin-bottom: 0px;">Quantum
+        IFRAME Match
+        Widget URL -
+        append match id #</label>
+      <div class="input-group input-group-sm " style="width: 510px">
+        <div class="input-group-prepend">
+          <span class="input-group-text"
+            style="background-color: #2188CD; color: #fff; border-radius: 0px; border: 0px;"
+            id="basic-addon3"><small>https://www.quantumcricketleague.com/widget/match/</small></span>
+        </div>
+        <input type="number" class="form-control form-control-sm" id="basic-url" aria-describedby="basic-addon3"
+          style="width: 50px; background-color: #2188CD; color: #fff;" />
+        <div class="input-group-append" style="margin-left: 0px;">
+          <span class="input-group-text" id="basic-addon3"
+            style="background-color: #2188CD; color: #fff; border-radius: 0px; border: 0px;"
+            ;><small>QUANTUM1001/token</small></span>
+        </div>
+      </div>
+
+      <iframe id="testContainer" src="" width="510px"
+        style="border: 1px solid #2188CD; min-height: 442px; height: 442px"></iframe>
+    </div>
+  </div>
+
+  <script>
+    $(document).ready(function (e) {
+      $("#basic-url").focus();
+
+      $("#basic-url").on("change", (e) => {
+        let _val = parseInt($(e.currentTarget).val());
+        if (_val > 0) {
+          $("#testContainer").attr("src", `https://www.quantumcricketleague.com/widget/match/${_val}QUANTUM1001/public`);
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
