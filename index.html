@@ -42,7 +42,17 @@
     style="border: 1px solid #2188CD; min-height: 442px; height: 442px"></iframe>
   </div>
  </div>
- <script>$(document).ready(function (e) { $("#basic-url").focus(); $("#basic-url").on("change", (e) => { let _val = parseInt($(e.currentTarget).val()); if (_val > 0) { $("#testContainer").attr("src", `https://www.quantumcricketleague.com/widget/match/${_val}QUANTUM1001/public`); } }); });</script>
+ <script>
+  $(document).ready(function (e) { 
+   $("#basic-url").focus(); 
+   $("#basic-url").on("change", (e) => { 
+    let _val = parseInt($(e.currentTarget).val());
+    if (_val > 0) { 
+     $("#testContainer").attr("src", `https://www.quantumcricketleague.com/widget/match/${_val}QUANTUM1001/public`);
+    }
+   }); 
+  });
+ </script>
 </body>
 
 </html>
